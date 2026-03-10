@@ -68,76 +68,60 @@
 
 
 \begin{document}
-    
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% --- CAPA ---
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+    \centering
+    \large \textbf{UNIVERSIDADE DE SÃO PAULO} \\
+    Faculdade de Medicina de Ribeirão Preto \\
+    \vspace{6cm}
+    \large \textbf{RELATÓRIO PARCIAL DE INICIAÇÃO CIENTÍFICA} \\
+    \vspace{1cm}
+    \Large \textbf{Predição da avaliação funcional de especialistas em lesão de LCA via \textit{Markerless} e \textit{Machine Learning} por meio de um teste Pliométrico Unipodal Multiplanar} \\
+    \vspace{5cm}
+    \large \textbf{Aluna:} Anna Carolina Magalhães Leonel \\
+    \large \textbf{Orientador:} Prof. Dr. Paulo Roberto Pereira Santiago \\
+    \vspace{0.5cm}
+     \large \textbf{Laboratório de Biomecânica e Engenharia Aplicada - LABE/USP}\\
+     \vspace{0.5 cm}
+    \textbf{Vigência:} #2025/12112-5 (FAPESP) \\
+    \vfill
+    Ribeirão Preto \\
+    2026
+\end{titlepage}
+
 \begin{center}
-\Large
-{
-\bf UNIVERSIDADE DE SÃO PAULO \\
-\vspace{1cm}
-FACULDADE DE MEDICINA DE RIBEIRÃO PRETO \\
-\vspace{1cm}
-
-GRADUAÇÃO EM FISIOTERAPIA \\
-
-\vspace{1cm}
-LABORATÓRIO DE BIOMECÂNICA E CONTROLE MOTOR} \\
-\vspace{4cm}
-{\bf Projeto de Iniciação Científica}\\
-\vspace{1cm}
-\LARGE
-Predição da avaliação funcional de especialistas em lesão de LCA via \textit{Markerless} e \textit{Machine Learning} por meio de um teste Pliométrico Unipodal Multiplanar
-\vspace{2cm}
-
-\Large {
-\bf Aluna: \href{https://lattes.cnpq.br/3924393086345892}{Anna Carolina Magalhães Leonel} \\[0.5em]
-\bf Orientador: \href{http://lattes.cnpq.br/6762194285058568}{Prof. Dr. Paulo Roberto Pereira Santiago}} \\[0.5em]
-\bf Colaboradores Nacionais: \href{http://lattes.cnpq.br/3097142727488536}{Prof. Dr. Rodrigo Salim} \\[0.5em]
-\href{http://lattes.cnpq.br/7197039502542262}{Doutorando - Rafael Luiz Martins Monteiro} \\[0.5em]
-\bf Colaborador Internacional: \href{https://webapps.unf.edu/faculty/bio/N01526872}{Prof. Dr. Guilherme Manna Cesar} \\[0.5em]
-
-
-\normalsize
-\vfill
-Ribeirão Preto - Brasil\\
-\large
-Junho - 2025
-\clearpage
-\Large
-\vspace{2cm}
+\Large \textbf{RESUMO}
 \end{center}
+\vspace{0.5cm}
+
+\noindent Este relatório parcial apresenta o andamento do projeto de iniciação científica focado na predição da avaliação funcional de especialistas em pacientes pós-reconstrução de LCA. Utilizando cinemática \textit{markerless} bia \textit{MediaPipe} e modelos de \textit{Machine Learning}, o projeto visa objetivar a tomada de decisão clínica no retorno ao esporte. Até o presente momento, foram realizadas 6 sessões de coleta de dados, capacitação nas ferramentas de visão computacional e planejamento completo do estágio de pesquisa internacional (BEPE) na \textit{University of North Florida}. O progresso atual indica o cumprimento satisfatório das metas iniciais, preparando o terreno para a validação transcultural prevista para o próximo semestre. 
+
+\vspace{0.5cm}
+\noindent\textbf{Palavras-chave}: Biomecânica, \textit{markerless}, LCA, \textit{Machine Learning}, BEPE.
+
+\newpage
+
+\onehalfspacing
 \tableofcontents
 
-\doublespacing
+\newpage
 
-\clearpage
-
-\section*{Resumo}
-\addcontentsline{toc}{section}{Resumo}
-\begin{center}
-\textbf{Predição da avaliação funcional de especialistas em lesão de LCA via Markerless e Machine Learning por meio de um teste Pliométrico Unipodal Multiplanar}
-\end{center}
-\vspace{0.5em}
-\noindent
-Em um delineamento agudo, já foram avaliados 6 participantes no período de 6 a 8 meses após a cirurgia de reconstrução do LCA, cada um realizando o teste em uma única sessão, embora tenham ocorrido algumas desistências de participantes inicialmente previstos. O projeto está caminhando conforme o planejado para atingir a amostra total. Além disso, como bolsista FAPESP, está previsto um estágio de pesquisa no exterior (BEPE) na \textit{University of North Florida} (UNF) sob supervisão do Prof. Dr. Guilherme Manna Cesar, visando a validação transcultural do modelo com especialistas americanos, tendo já recebido a carta de convite oficial para tal finalidade. Utilizando três câmeras GoPro Hero 10, movimentos serão capturados em diferentes planos e processados pelo \textit{framework} \textit{MediaPipe}, que permite a extração de características cinemáticas relevantes (\textit{features}) associadas a fatores de risco para lesão de LCA. Especialistas atribuirão escores funcionais globais (escala 1–5) aos pacientes, baseados na análise dos vídeos e em seu conhecimento clínico prévio, e a confiabilidade entre avaliadores será verificada pelo índice Kappa de Cohen. Os dados alimentarão o treinamento e avaliação de múltiplos modelos supervisionados (Extreme Gradient Boosting, Random Forest, Regressão Logística, K-Nearest Neighbors, Support Vector Machine, Gaussian Naive Bayes, Multilayer Perceptron), otimizados por Grid Search e avaliados por validação cruzada estratificada. O desempenho será analisado por acurácia balanceada, precisão, recall e F1 Score. As análises estatísticas, realizadas em Python 3.12.11, envolverão testes de normalidade (Shapiro-Wilk), homogeneidade (Levene), comparações por ANOVA ou Kruskal-Wallis, post-hoc apropriados e cálculo do d de Cohen. O objetivo final é desenvolver uma ferramenta automatizada, objetiva e confiável para apoiar a reabilitação funcional pós-LCA além de indicar quais os melhores modelos de aprendizado de máquina para esta tarefa.
- \\
-
-\noindent\textbf{Palavras-chave}: Biomecânica do joelho, Reabilitação funcional, Reconstrução do LCA, Visão Computacional, Aprendizado de Máquina.
-
-\clearpage
-
-\section*{Abstract}
-\addcontentsline{toc}{section}{Abstract}
-\begin{center}
-\textbf{Prediction of Specialist Functional Assessment in ACL Injury Using Markerless and Machine Learning Approaches Through a Multiplanar Unipodal Plyometric Test}
-\end{center}
-\vspace{0.5em}
-\noindent
-\textit{This project aims to apply machine learning models and computer vision techniques to estimate functional assessments made by specialists for patients with Anterior Cruciate Ligament (ACL) injuries, using kinematic data obtained from markerless tracking during the Multiplanar Unipodal Plyometric (CUBE) test. In an acute design, 6 participants have already been evaluated between 6 and 8 months after anterior cruciate ligament (ACL) reconstruction surgery, each performing the test in a single session, despite some participant dropouts. The project is progressing as planned to reach the full sample size. Furthermore, as a FAPESP fellow, a research internship abroad (BEPE) is planned at the University of North Florida (UNF) under the supervision of Prof. Dr. Guilherme Manna Cesar, aimed at cross-cultural validation of the model with US specialists, for which an official invitation letter has already been received. Three GoPro Hero 10 cameras will capture movements in multiple planes, and the MediaPipe framework will extract relevant kinematic features associated with ACL injury risk factors. Specialists will assign global functional scores (1–5) to patients, based on video analysis and their prior clinical knowledge. Inter-rater reliability will be evaluated using Cohen’s Kappa index. The resulting data will be used to train and evaluate multiple supervised machine learning models (Extreme Gradient Boosting, Random Forest, Logistic Regression, K-Nearest Neighbors, Support Vector Machine, Gaussian Naive Bayes, Multilayer Perceptron), optimized with Grid Search and evaluated by stratified cross-validation. Model performance will be assessed by balanced accuracy, precision, recall, and F1 Score. Statistical analyses, performed in Python 3.12.11, will include normality (Shapiro-Wilk), homogeneity (Levene), group comparisons by one-way ANOVA or Kruskal-Wallis, appropriate post-hoc tests, and effect size estimation (Cohen’s d). The ultimate goal is to develop an automated, objective, and reliable tool to support functional rehabilitation and clinical decision-making for post-ACL reconstruction patients and inidicates the best machine learning models for this task.} \\
- 
-
-\noindent \textit{\textbf{Keyword}: Knee biomechanics, Functional rehabilitation, ACL reconstruction, Computer vision, Machine Learning}
-
-
+\section{IDENTIFICAÇÃO}
+\noindent\textbf{Projeto:} Predição da avaliação funcional de especialistas em lesão de LCA via \textit{Markerless} e \textit{Machine Learning} por meio de um teste Pliométrico Unipodal Multiplanar.\\
+\textbf{Orientador:} Prof. Dr. Paulo Roberto Pereira Santiago.\\
+\textbf{Aluna:} Anna Carolina Magalhães Leonel.\\
+\textbf{Fomento:} FAPESP (Processo \#2025/12112-5).\\
+Laboratório de Biomecânica e Engenharia Aplicada - LABE\\
+Faculdade de Medicina de Ribeirão Preto - FMRP/USP\\
+\\
+Colaborador Nacional: Prof. Dr. Rodrigo Salim\\
+Doutorando Colaborador: Rafael Luiz Martins Monteiro\\
+Colaborador Internacional: Prof. Dr. Guilherme Manna Cesar (UNF)\\
+Dra. Sherry Pinkstaff (UNF)\\
+Vigência da Bolsa: 2025 -- 2026
 
 \newpage
 
@@ -505,26 +489,40 @@ O nível de significância adotado para todas as análises será de $p < 0{,}05$
 
 %Tanto as métricas descritas na sessão avaliação dos modelos de Aprendizado de Máquina quanto os valores das variáveis cinemáticas do teste Pliométrico Unipodal Multiplanar CUBE serão descritos em média e desvio padrão e comparados entre os melhores modelos e entre os diferentes momentos da avaliação. A normalidade e homogeneidade serão verificadas pelos testes de Shapiro-Wilk e Levene. Quando os dados apresentaram distribuição normal e homogênea, eles serão comparados utilizando a Anova one-way e o post-hoc de Tukey's HSD (Honestly Significant Difference). Quando a distribuição dos dados não for normal e homogênea, as métricas serão comparadas utilizando o teste de Kruskal-Wallis com post-hoc de Dunn com ajuste de Bonferroni. Para descrição do tamanho de efeito será calculado o d de Cohen para cada comparação. Em todos os casos o nível de significância considerado será de p<0,05. As análises serão realizadas por meio de algoritmos em Python 3. 
 
-\section{Relatório de Atividades Realizadas (Situação Atual)}
+\section{RELATÓRIO DE ATIVIDADES}
+No período de vigência da bolsa até o momento (março de 2026), as atividades concentraram-se na fundamentação teórica, capacitação técnica e execução das coletas experimentais.
 
-\noindent Até o presente momento, o projeto apresenta os seguintes avanços e resultados preliminares:
-
-\begin{enumerate}
-    \item \textbf{Coleta de Dados}: Foram realizadas com sucesso 6 sessões de coleta de dados cinemáticos com pacientes entre 6 e 8 meses de pós-operatório de reconstrução de LCA. Apesar de algumas desistências pontuais, o recrutamento continua ativo para atingir a meta amostral.
-    \item \textbf{Infraestrutura e Padronização}: O ambiente de coleta no consultório colaborador foi devidamente calibrado utilizando marcadores estáticos e as três câmeras GoPro Hero 10 sincronizadas.
-    \item \textbf{Processamento de Vídeo}: A pipeline inicial de Visão Computacional (\textit{MediaPipe}) e reconstrução 3D (\textit{DLT}) foi testada e validada com as primeiras amostras.
-    \item \textbf{Internacionalização (BEPE)}: O planejamento para o estágio de pesquisa no exterior (\textit{University of North Florida}) está concluído. A aluna já recebeu a carta de convite oficial para o período de junho a dezembro de 2026, focando na validação transcultural do modelo.
-    \item \textbf{Conformidade Ética}: Todas as atividades seguem rigorosamente o protocolo aprovado (CAAE 89943725.2.0000.5659).
-\end{enumerate}
-
-\section {Atividades a serem desenvolvidas pelo bolsista}
+\subsection{Capacitação e Fundamentação Teórica}
+A aluna dedicou-se à revisão bibliográfica sistemática sobre biomecânica do LCA e inteligência artificial. Foram dominadas as seguintes ferramentas:
 \begin{itemize}
-    \item Agendar e filmar sessões; organizar metadados.
-    \item Executar scripts de pose estimation para extrair séries 2D e 3D.
-    \item Análise exploratória e correlações em código Python.
-    \item Criar e desenvolver \textit{template} para treinar cada algoritmo; selecionar hiper parâmetros via busca bayesiana.
-    \item Elaborar resumo científico.
+    \item \textbf{\textit{MediaPipe} via \textit{vailá}}: Extração de coordenadas 2D e 3D sem marcadores.
+    \item \textbf{Python (\textit{Scikit-learn}, \textit{Pandas})}: Processamento de dados e implementação de modelos de classificação.
+    \item \textbf{\LaTeX}: Escrita científica estruturada.
 \end{itemize}
+
+\subsection{Atividades Experimentais e Coleta de Dados}
+Até o momento, foram realizadas 6 sessões de coleta de dados na clínica do colaborador Prof. Dr. Rodrigo Salim. 
+\begin{itemize}
+    \item \textbf{Setup}: Utilização de 3 câmeras GoPro Hero 10 a 240fps.
+    \item \textbf{Calibração}: Uso de marcadores estáticos para 3D-DLT.
+    \item \textbf{Desafios}: Ocorreram algumas desistências de participantes, porém o cronograma de recrutamento foi ajustado para manter o $N$ necessário para o treinamento dos modelos.
+\end{itemize}
+
+\subsection{Processamento e Resultados Preliminares}
+Os dados das 6 coletas iniciais já passaram pela \textit{pipeline} de extração cinemática. Foram calculadas variáveis como valgo dinâmico e picos de flexão. Estas variáveis estão sendo integradas para a fase de treinamento dos classificadores supervisionados.
+
+\subsection{Internacionalização e Planejamento BEPE}
+Uma atividade central deste período foi a submissão e estruturação estratégica do estágio de pesquisa no exterior (\textit{University of North Florida}). A aluna já obteve o aceite formal da instituição anfitriã para o período de junho a dezembro de 2026.
+
+\section{DESEMPENHO ACADÊMICO}
+No período vigente, o desempenho acadêmico da discente tem sido satisfatório, com pleno cumprimento das disciplinas curriculares da graduação em Fisioterapia. 
+\begin{itemize}
+    \item \textbf{Média Ponderada}: \textit{[Inserir Média Aqui]}
+    \item \textbf{Histórico}: Sem reprovações e com engajamento em atividades de extensão e ligas acadêmicas do campus.
+\end{itemize}
+
+\section{DESENVOLVIMENTO DAS ATIVIDADES}
+As atividades previstas para o primeiro semestre da bolsa foram integralmente cumpridas, com destaque para a antecipação das coletas e o sucesso na articulação internacional.
 
 \section{Cronograma}
 
@@ -542,31 +540,30 @@ Além disso, o projeto conta com a colaboração internacional do pesquisador Dr
 
 \begin{table}[h!]
 \centering
-\caption{Cronograma de atividades}
-\label{tab:cronograma_destacado} % Adicionei um label para referência
-\begin{tabular}{
->{\raggedright\arraybackslash}m{8cm} % Coluna para as atividades
-*{12}{c} % 12 colunas para os meses, centralizadas
-}
+\caption{Cronograma de atividades (Vigência 2025-2026)}
+\label{tab:cronograma_destacado}
+\begin{tabular}{>{\raggedright\arraybackslash}m{8cm}*{12}{c}}
 \toprule
-\rowcolor{white} % Destaca a primeira linha de cabeçalho
 \textbf{Atividades} & \multicolumn{12}{c}{\textbf{Meses para realização}} \\
-\cmidrule(lr){2-13} % Linha horizontal parcial
-\rowcolor{white} % Destaca a segunda linha de cabeçalho
+\cmidrule(lr){2-13}
 & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} \\
-\rowcolor{white} % Destaca a linha da atividade
-Capacitação em processamento de vídeo e Machine Learning & \cellcolor{gray!30} & \cellcolor{gray!30} & & & & & & & & & & \\
-\rowcolor{white} % Destaca a linha da atividade
-Recrutamento e coleta de dados & & & \cellcolor{gray!30} & \cellcolor{gray!30} & \cellcolor{gray!30} & \cellcolor{gray!30} & & & & & & \\
-\rowcolor{white} % Destaca a linha da atividade
-Tratamento dos dados e treinamento do modelo & & & & & & & \cellcolor{gray!30} & \cellcolor{gray!30} & \cellcolor{gray!30} & & & \\
-\rowcolor{white} % Destaca a linha da atividade
-Comparação estatística com avaliações clínicas & & & & & & & & & & \cellcolor{gray!30} & \cellcolor{gray!30} & \\
-\rowcolor{white} % Destaca a linha da atividade
-Redação do artigo e relatório final      & & & & & & & & & & & & \cellcolor{gray!30} \\
+\midrule
+Capacitação (CV, ML, \LaTeX) & \cellcolor{gray!30} & \cellcolor{gray!30} & & & & & & & & & & \\
+Recrutamento e Coleta de Dados & & & \cellcolor{gray!30} & \cellcolor{gray!30} & \cellcolor{gray!30} & \cellcolor{gray!30} & & & & & & \\
+Processamento Avançado (OpenSim) & & & & & & & \cellcolor{gray!30} & \cellcolor{gray!30} & & & & \\
+Treinamento e Validação Cross-Cultural (BEPE) & & & & & & & & & \cellcolor{gray!30} & \cellcolor{gray!30} & \cellcolor{gray!30} & \cellcolor{gray!30} \\
+Escrita Científica e Relatório Final & & & & & & & & & & & \cellcolor{gray!30} & \cellcolor{gray!30} \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\section{PRÓXIMAS ETAPAS}
+As próximas fases do projeto contemplam:
+\begin{itemize}
+    \item \textbf{Integração OpenSim}: Extração de momentos articulares e forças musculares.
+    \item \textbf{Validação Internacional}: Aplicação do modelo em amostra americana na UNF.
+    \item \textbf{Publicação}: Submissão de artigo em periódico de alto impacto na área de biomecânica.
+\end{itemize}
 
 
 \newpage
