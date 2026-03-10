@@ -49,6 +49,7 @@
 \usepackage{fancyvrb}     % Para listagens de código
 \usepackage{enumerate}    % Para personalizar listas enumeradas
 \usepackage[title]{appendix} % Para formatação de apêndices
+\usepackage{pdfpages}     % Para incluir documentos PDF externos
 
 % --- Configurações de Hifenização e Justificação ---
 \justifying
@@ -504,6 +505,18 @@ O nível de significância adotado para todas as análises será de $p < 0{,}05$
 
 %Tanto as métricas descritas na sessão avaliação dos modelos de Aprendizado de Máquina quanto os valores das variáveis cinemáticas do teste Pliométrico Unipodal Multiplanar CUBE serão descritos em média e desvio padrão e comparados entre os melhores modelos e entre os diferentes momentos da avaliação. A normalidade e homogeneidade serão verificadas pelos testes de Shapiro-Wilk e Levene. Quando os dados apresentaram distribuição normal e homogênea, eles serão comparados utilizando a Anova one-way e o post-hoc de Tukey's HSD (Honestly Significant Difference). Quando a distribuição dos dados não for normal e homogênea, as métricas serão comparadas utilizando o teste de Kruskal-Wallis com post-hoc de Dunn com ajuste de Bonferroni. Para descrição do tamanho de efeito será calculado o d de Cohen para cada comparação. Em todos os casos o nível de significância considerado será de p<0,05. As análises serão realizadas por meio de algoritmos em Python 3. 
 
+\section{Relatório de Atividades Realizadas (Situação Atual)}
+
+\noindent Até o presente momento, o projeto apresenta os seguintes avanços e resultados preliminares:
+
+\begin{enumerate}
+    \item \textbf{Coleta de Dados}: Foram realizadas com sucesso 6 sessões de coleta de dados cinemáticos com pacientes entre 6 e 8 meses de pós-operatório de reconstrução de LCA. Apesar de algumas desistências pontuais, o recrutamento continua ativo para atingir a meta amostral.
+    \item \textbf{Infraestrutura e Padronização}: O ambiente de coleta no consultório colaborador foi devidamente calibrado utilizando marcadores estáticos e as três câmeras GoPro Hero 10 sincronizadas.
+    \item \textbf{Processamento de Vídeo}: A pipeline inicial de Visão Computacional (\textit{MediaPipe}) e reconstrução 3D (\textit{DLT}) foi testada e validada com as primeiras amostras.
+    \item \textbf{Internacionalização (BEPE)}: O planejamento para o estágio de pesquisa no exterior (\textit{University of North Florida}) está concluído. A aluna já recebeu a carta de convite oficial para o período de junho a dezembro de 2026, focando na validação transcultural do modelo.
+    \item \textbf{Conformidade Ética}: Todas as atividades seguem rigorosamente o protocolo aprovado (CAAE 89943725.2.0000.5659).
+\end{enumerate}
+
 \section {Atividades a serem desenvolvidas pelo bolsista}
 \begin{itemize}
     \item Agendar e filmar sessões; organizar metadados.
@@ -565,11 +578,9 @@ Redação do artigo e relatório final      & & & & & & & & & & & & \cellcolor{g
 \begin{appendices}
 \section{Carta de Convite - University of North Florida (UNF)}
 \label{apice:carta_unf}
-Abaixo, faz-se referência à Carta de Convite oficial emitida pela \textit{University of North Florida}, assinada pela Dra. Sherry O. Pinkstaff e pelo Prof. Dr. Guilherme Manna Cesar, confirmando o aceite da aluna Anna Carolina Magalhães Leonel para o estágio BEPE no \textit{Laboratory of Applied Biomechanics and Engineering} (LABE) durante o período de 29 de junho a 29 de dezembro de 2026.
+Abaixo, inclui-se a Carta de Convite oficial emitida pela \textit{University of North Florida}, assinada pela Dra. Sherry O. Pinkstaff e pelo Prof. Dr. Guilherme Manna Cesar.
 
-% Nota: O arquivo PDF da carta pode ser incluído fisicamente no documento final usando o comando:
-% \includepdf[pages=-]{Invitation_Letter_FAPESP_BEPE_Anna_Leonel.pdf}
-% (Requer o pacote pdfpages no preâmbulo)
+\includepdf[pages=-]{pdf/Invitation_Letter_FAPESP_BEPE_Anna_Leonel.pdf}
 \end{appendices}
 
 \end{document}
